@@ -1,43 +1,40 @@
-
+// Actually this is also a drill from  programming :principles and structure by Stroustrup sir ;
 
 #include <iostream>
 #include <vector>
 #include <cstdlib>
 
-
 using namespace std;
 
-int check(string temp) {
+int check(string temp) {             // Check the index of user input in v[]....................................
 	string arr[] = { "rock","paper", "scissor" };
-	for (int i = 0; i < 3; i++) {
+	
+	for (int i = 0; i < 3; i++) 
 		if (temp == arr[i])
 			return i;
-	}
+	
 }
 
-int main()
-{
+int main(){
 	string v[] = { "rock", "paper", "scissor" };
 	int n;
-	string user;
-	string com;
-	 
-	int compuerwin = 0;
-	int userwin = 0;
-		cout << "Enter rock,, paper,, scissor,, " << endl;
+	string user;      //user move ..................
+	string com;       // computer,s move............. 
+	int compuerwin = 0;  // computer score ..........
+	int userwin = 0;    // user score...............
+	int round = 1 ;
+	
+	cout<<" Round 1 ::: " << endl;
+	
+	cout << "Enter rock,, paper,, scissor,, " << endl;
 
- 
-		
-	while (cin >> user) {
-	    
-		n = rand( ) % 3;
+        while (cin >> user) {
+	        n = rand( ) % 3;
+                com = v[n];
+		cout << "  \n Computer's move ::::::::" << com<< endl;
 
-		com = v[n];
-
-		cout << "This time computer gave input :::::::::::::::::::::::::::::::" << com<< endl;
-
-     int index_user =   check(user);
-	 int index_com = check(com);
+         int index_user =   check(user);
+	 int index_com  =   check(com);
 
 	 int result = index_user - index_com;
 
@@ -53,9 +50,9 @@ int main()
 
 	 cout << " Your score -  Computer Score  \n \n \n   " << userwin << "              " << compuerwin << endl;
 	 cout << " \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-	 cout << " \n \n \n \n \n";
-
-	 cout << "Enter rock,, paper,, scissor,,   or Ctrl + Z to quit the game" << endl;
+	 cout << " \n Round" << round;
+         cout << "Enter rock,, paper,, scissor,,   or Ctrl + Z to quit the game" << endl;
+		round ++;
 
 	}
 
