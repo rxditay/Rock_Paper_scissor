@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
-#include  <time.h>
+
 
 using namespace std;
 
@@ -55,7 +55,7 @@ int main()
 	 cout << " \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	 cout << " \n \n \n \n \n";
 
-	 cout << "Enter rock,, paper,, scissor,, " << endl;
+	 cout << "Enter rock,, paper,, scissor,,   or Ctrl + Z to quit the game" << endl;
 
 	}
 
