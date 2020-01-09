@@ -1,59 +1,63 @@
-// Actually this is also a drill from  programming :principles and structure by Stroustrup sir ;
+ // Actually this is also a drill from  programming :principles and structure by Stroustrup sir ;
 
 #include <iostream>
 #include <vector>
-#include <cstdlib>
-
+#include <stdlib.h>
+#include<time.h>
 using namespace std;
 
 int check(string temp) {             // Check the index of user input in v[]....................................
 	string arr[] = { "rock","paper", "scissor" };
-	
-	for (int i = 0; i < 3; i++) 
+
+	for (int i = 0; i < 3; i++)
 		if (temp == arr[i])
 			return i;
-	
+
 }
 
-int main(){
+int main() {
 	string v[] = { "rock", "paper", "scissor" };
 	int n;
 	string user;      //user move ..................
 	string com;       // computer,s move............. 
 	int compuerwin = 0;  // computer score ..........
 	int userwin = 0;    // user score...............
-	int round = 1 ;
-	
-	cout<<" Round 1 ::: " << endl;
-	
-	cout << "Enter rock,, paper,, scissor,, " << endl;
+	int round = 2;
 
-        while (cin >> user) {
-	        n = rand( ) % 3;
-                com = v[n];
-		cout << "  \n Computer's move ::::::::" << com<< endl;
+	cout << "  Round 1 ::: ";
 
-         int index_user =   check(user);
-	 int index_com  =   check(com);
+	cout << "    Enter rock , paper , scissor " << endl;
 
-	 int result = index_user - index_com;
+	while (cin >> user) {
+		srand((time(NULL)));
+		n = rand() % 3;
+		com = v[n];
+		cout << "  \n Computer's move ::::::::  " << com <<" \n \n \n " << endl;
 
-	 if( (result == -1)||(result==2)) {
-		 cout << "Computer won!!!!!!!" << endl;
-		 compuerwin++;
-	 }
+		int index_user = check(user);
+		int index_com = check(com);
 
-	 if ((result == 1)||(result==-2)) {
-		 cout << "You won !!!!!!!!!  \n \n \n" << endl;
-		 userwin++;
-	 } 
+		int result = index_user - index_com;
 
-	 cout << " Your score -  Computer Score  \n \n \n   " << userwin << "              " << compuerwin << endl;
-	 cout << " \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-	 cout << " \n Round" << round;
-         cout << "Enter rock,, paper,, scissor,,   or Ctrl + Z to quit the game" << endl;
-		round ++;
+		if ((result == -1) || (result == 2)) {
+			cout << " Computer won! This Round" << endl;
+			compuerwin++;
+		}
+
+		if ((result == 1) || (result == -2)) {
+			cout << " You won ! This Round  " << endl;
+			userwin++;
+		}
+		else if (result == 0)   cout << " Draw !!!!!!!!" << endl;
+
+		cout << " Your score -  Computer Score  \n \n \n   " << userwin << "              " << compuerwin << endl;
+		cout << " \n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+		cout << " \n Round  " << round<<" :::";
+		cout << "    Enter rock , paper , scissor , Ctrl + Z to quit the game" << endl;
+		round++;
 
 	}
+	cout << " ";
+	cout << " \n \n \n \n \t \t \t \t | Final score ::::::: " << userwin << " - " << compuerwin << " | \n \n \n \n \n " << endl;
 
 }
