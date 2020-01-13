@@ -3,10 +3,10 @@
 #include <iostream>
 #include <vector>
 #include <stdlib.h>
-#include<time.h>
+
 using namespace std;
 
-int check(string temp) {             // Check the index of user input in v[]....................................
+int check(string temp) {             // Check the index of user input in v[]
 	string arr[] = { "rock","paper", "scissor" };
 
 	for (int i = 0; i < 3; i++)
@@ -18,13 +18,13 @@ int check(string temp) {             // Check the index of user input in v[]....
 int main() {
 	string v[] = { "rock", "paper", "scissor" };
 	int n;
-	string user;      //user move ..................
-	string com;       // computer,s move............. 
-	int compuerwin = 0;  // computer score ..........
-	int userwin = 0;    // user score...............
+	string user;          //user move 
+	string com;           // computer's move
+	int compuerwin = 0;   // computer's score 
+	int userwin = 0;      // user's score
 	int round = 2;
 
-	cout << "  Round 1 ::: ";
+	cout << "  Round 1 : ";
 
 	cout << "    Enter rock , paper , scissor " << endl;
 
@@ -32,7 +32,7 @@ int main() {
 		srand((time(NULL)));
 		n = rand() % 3;
 		com = v[n];
-		cout << "  \n Computer's move ::::::::  " << com <<" \n \n \n " << endl;
+		cout << "  \n Computer's move :  " << com <<" \n \n \n " << endl;
 
 		int index_user = check(user);
 		int index_com = check(com);
