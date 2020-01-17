@@ -62,19 +62,20 @@ void play() {   //Let's Play
 int main() {
     srand((time(NULL)));
     cout << "Game started." << endl;
+label:
     for (int i = 1; i < 6; i++) {
         cout<<" \n \n Round "<<i<<"  Started "<<endl;
         play();
 
     }
 
-    char choice{};
+    
 
     do {
         cout << "\nDo you want to play again?[y]" << endl;
         cin >> choice;
          
-
+ goto label;
         if (choice == 'y') {
             play();
         }
